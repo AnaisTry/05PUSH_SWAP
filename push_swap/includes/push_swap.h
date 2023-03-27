@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:11:37 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/28 00:02:33 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/28 00:11:54 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,15 @@
 
 /*									[Typedefs]								*/
 
+typedef struct s_node
+{
+	int				content;
+	struct s_node	*next;
+}				t_node;
 typedef struct s_stack
 {
-	t_list	*a;
-	t_list	*b;
+	t_node	*a;
+	t_node	*b;
 	size_t	size;
 }				t_stack;
 

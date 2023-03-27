@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:33:18 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/01 14:01:51 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/28 00:04:19 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}t_list;
+}				t_list;
 
 // libc
 int		ft_isalpha(int c);
