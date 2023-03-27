@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:11:37 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/27 15:17:13 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/28 00:02:33 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,16 @@
 
 # define WRONG_ARG 2
 
-
 /*									[Typedefs]								*/
 
 typedef struct s_stack
 {
-    t_list  *a;
-    t_list  *b;
-    size_t  size;
-}               t_stack;
-
-
+	t_list	*a;
+	t_list	*b;
+	size_t	size;
+}				t_stack;
 
 /*									  [Src]	    							*/
-
 
 /*									[Utils]	    							*/
 
