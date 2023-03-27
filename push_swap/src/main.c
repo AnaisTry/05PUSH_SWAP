@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/27 15:43:01 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/27 16:01:52 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ static void    init(char **av, t_stack *stack)
     if (av[1] ==  NULL)
         exit(WRONG_ARG);
     while(av[++i])
-        ft_lstadd_back(&stack->a, ft_lstnew((void *)ft_atoi(av[i])));
+        ft_lstadd_back(&stack->a, ft_lstnew(ft_atoi(av[i])));
+
     // check content :
-    ft_lstiter(stack->a, ft_printf("stack a : \n%d\n", (int)stack->a->content));
+    ft_lstiter(stack->a, ft_printf("stack a : \n%d\n", *stack->a->content));
     
     stack->size = ft_lstsize(stack->a);
     
