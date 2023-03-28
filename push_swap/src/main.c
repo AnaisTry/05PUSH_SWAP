@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/28 17:21:04 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:49:50 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ static void	init(char **av, t_stack *stack)
 	if (av[1] == NULL)
 		exit(WRONG_ARG);
 	while (av[++i])
-		node_add_back(&stack->a, newnode(ft_atoi(av[i])));
+	{
+		if (arg_is_valid(av[i]) = true)
+			node_add_back(&stack->a, newnode(ft_atoi(av[i])));
+	}
 }
