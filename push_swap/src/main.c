@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/28 00:02:36 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:21:04 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ int	main(int argc, char	**argv)
 	if (argc < 2)
 		return (EXIT_FAILURE);
 	init(argv, &stack);
+	int i = 0;
+	while (stack.a)
+	{
+		ft_printf("node %d : %d\n", i, stack.a->value);
+		stack.a = stack.a->next;
+		i++;
+	}
 	return (0);
 }
 
@@ -34,8 +41,5 @@ static void	init(char **av, t_stack *stack)
 	if (av[1] == NULL)
 		exit(WRONG_ARG);
 	while (av[++i])
-		ft_lstadd_back(&stack->a, ft_lstnew(ft_atoi(av[i])));
-    // check content :
-    ft_lstiter(stack->a, ft_printf("stack a : \n%d\n", stack->a->content));
-	stack->size = ft_lstsize(stack->a);
+		node_add_back(&stack->a, newnode(ft_atoi(av[i])));
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: angassin <angassin@student.s19.be>         +#+  +:+       +#+         #
+#    By: angassin <angassin@student.19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 17:09:20 by angassin          #+#    #+#              #
-#    Updated: 2023/03/01 14:03:00 by angassin         ###   ########.fr        #
+#    Updated: 2023/03/28 10:58:18 by angassin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ FT_42		=	ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c  \
 
 FT_LISTS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 				ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-				ft_lstmap.c
+				ft_lstmap.c node.c
 LISTS_SRC	=	$(addprefix ft_lists/, $(FT_LISTS))
 
 GNL			=	get_next_line.c get_next_line_utils.c 

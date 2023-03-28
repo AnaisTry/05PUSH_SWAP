@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:33:18 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/28 00:04:19 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:16:53 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct s_node
+{
+	int				value;
+	int				index;
+	struct s_node	*next;
+}				t_node;
 
 // libc
 int		ft_isalpha(int c);
@@ -79,5 +86,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
+// node.c
+t_node	*newnode(int value);
+t_node	*lastnode(t_node *node);
+void	node_add_back(t_node **lst, t_node *new);
+void	nodes_iter(t_node *node, void (*f)(int));
+int		lstsize(t_node *node);
 #endif
