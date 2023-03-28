@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/28 17:49:50 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:24:45 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 static	void	init(char **av, t_stack *stack);
+static	int	arg_is_valid(const char *arg);
 
 int	main(int argc, char	**argv)
 {
@@ -42,7 +43,27 @@ static void	init(char **av, t_stack *stack)
 		exit(WRONG_ARG);
 	while (av[++i])
 	{
-		if (arg_is_valid(av[i]) = true)
+		if (arg_is_valid(av[i]) == 1)
 			node_add_back(&stack->a, newnode(ft_atoi(av[i])));
 	}
+}
+
+static	int	arg_is_valid(const char *arg)
+{
+	size_t	i;
+
+	i = 0;
+	if (arg[i] == '\0')
+		error_exit();
+	if (arg[0] == '-')
+		++i;
+	while (arg[i])
+	{
+		if (!ft_isdigit(arg[i]))
+			error_exit();
+		i++;
+	}
+	if (i == 1 && arg[0] == '-')
+		error_exit();
+	return (1);
 }

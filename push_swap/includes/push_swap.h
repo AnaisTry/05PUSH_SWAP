@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:11:37 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/28 10:17:46 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/28 19:05:08 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@
 
 /*									[Typedefs]								*/
 
-
 typedef struct s_stack
 {
 	t_node	*a;
@@ -41,5 +40,7 @@ typedef struct s_stack
 /*									  [Src]	    							*/
 
 /*									[Utils]	    							*/
+
+void	error_exit(void);
 
 #endif

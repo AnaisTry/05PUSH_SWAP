@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: angassin <angassin@student.19.be>          +#+  +:+       +#+         #
+#    By: angassin <angassin@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:16:32 by angassin          #+#    #+#              #
-#    Updated: 2023/03/28 14:25:09 by angassin         ###   ########.fr        #
+#    Updated: 2023/03/28 19:07:46 by angassin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ LIBFT		= $(addprefix libft/, $(LIBFT_A))
 PUSH_SWAP		= main.c
 PUSH_SWAP_SRC	= $(addprefix src/, $(PUSH_SWAP))
 
-UTILS		= 
+UTILS		= utils.c 
 UTILS_SRC	= $(addprefix utils/, $(UTILS)) 
 
 OBJ			= $(SRC:.c=.o)
