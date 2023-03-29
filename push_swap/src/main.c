@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/28 19:24:45 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:44:07 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 static	void	init(char **av, t_stack *stack);
-static	int	arg_is_valid(const char *arg);
+static	void	arg_is_valid(const char *arg);
+static	void	is_valid_int(char *arg, int value);
 
 int	main(int argc, char	**argv)
 {
@@ -32,9 +33,14 @@ int	main(int argc, char	**argv)
 	return (0);
 }
 
+/* 
+	Initialize the stacks and the nodes, 
+	checking that they contain only valid integers
+*/
 static void	init(char **av, t_stack *stack)
 {
 	size_t	i;
+	int		value;
 
 	i = 0;
 	stack->a = NULL;
@@ -43,12 +49,18 @@ static void	init(char **av, t_stack *stack)
 		exit(WRONG_ARG);
 	while (av[++i])
 	{
-		if (arg_is_valid(av[i]) == 1)
-			node_add_back(&stack->a, newnode(ft_atoi(av[i])));
+		arg_is_valid(av[i]);
+		value = ft_atoi(av[i]);
+		is_valid_int(av[i], value);
+		node_add_back(&stack->a, newnode(value));
 	}
 }
 
-static	int	arg_is_valid(const char *arg)
+/* 
+	Checks that the argument contains only digits and only one minus sign
+	before the digits if there is one
+*/
+static void	arg_is_valid(const char *arg)
 {
 	size_t	i;
 
@@ -65,5 +77,15 @@ static	int	arg_is_valid(const char *arg)
 	}
 	if (i == 1 && arg[0] == '-')
 		error_exit();
-	return (1);
+}
+
+/* uses the return value of atoi to check if value is an integer */
+static void	is_valid_int(char *arg, int value)
+{
+	ft_printf("value : %d\n", value);
+
+	if (value == 0 && !(ft_strncmp(arg, "0", ft_strlen(arg)) == 0))
+		error_exit();
+	if (value == -1 && !(ft_strncmp(arg, "-1", ft_strlen(arg)) == 0))
+		error_exit();
 }

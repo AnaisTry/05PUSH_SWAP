@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:11:37 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/28 19:05:08 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:35:14 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ typedef struct s_stack
 	t_node	*b;
 	size_t	size;
 }				t_stack;
+
+typedef enum e_bool
+{
+	false,
+	true
+}			t_bool;
 
 /*									  [Src]	    							*/
 
