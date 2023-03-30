@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 19:01:24 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/30 11:41:52 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/30 12:46:32 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@
 	Displays "Error" followed by a ’\n’ on the standard error 
 	and exit	
 */
-void	error_exit(void)
+void	error_exit(t_stack	*stack)
 {
-	//if 
+	if (stack)
+	{
+		lstclear(&stack->a);
+		lstclear(&stack->b);
+	}
 	write(STDERR_FILENO, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }

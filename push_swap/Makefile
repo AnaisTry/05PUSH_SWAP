@@ -6,7 +6,7 @@
 #    By: angassin <angassin@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:16:32 by angassin          #+#    #+#              #
-#    Updated: 2023/03/30 09:21:19 by angassin         ###   ########.fr        #
+#    Updated: 2023/03/30 12:50:40 by angassin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CC			= gcc
 
 CFLAGS		= -Wall -Wextra -Werror -g
 
-DEBUG		=  -g #-fsanitize=address
+DEBUG		=  -g -fsanitize=address
 
 
 #--------------------------------SOURCES----------------------------------------

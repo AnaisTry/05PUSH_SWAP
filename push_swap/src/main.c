@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/30 11:31:29 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/30 12:47:18 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,20 @@ static void	arg_is_valid(const char *arg)
 
 	i = 0;
 	if (arg[i] == '\0')
-		error_exit();
+		error_exit(NULL);
 	if (arg[0] == '-')
 		++i;
 	while (arg[i])
 	{
 		if (!ft_isdigit(arg[i]))
-			error_exit();
+			error_exit(NULL);
 		i++;
 	}
 	if (i == 1 && arg[0] == '-')
-		error_exit();
+		error_exit(NULL);
 	nb = ft_atol(arg);
 	if (nb < INT_MIN || nb > INT_MAX)
-		error_exit();
+		error_exit(NULL);
 }
 
 static void	check_duplicates(t_stack *stack)
@@ -86,7 +86,7 @@ static void	check_duplicates(t_stack *stack)
 		while (next_node)
 		{
 			if (cursor->value == next_node->value)
-				error_exit();
+				error_exit(stack);
 			next_node = next_node->next;
 		}
 		cursor = cursor->next;

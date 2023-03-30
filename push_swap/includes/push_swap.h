@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:11:37 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/29 15:35:14 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/30 12:42:53 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ typedef enum e_bool
 
 /*									[Utils]	    							*/
 
-void	error_exit(void);
+void	error_exit(t_stack *stack);
 
 #endif
