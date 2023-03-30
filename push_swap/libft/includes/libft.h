@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:33:18 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/28 11:16:53 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/30 10:13:18 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ char	*ft_itoa(int n);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 char	*ft_strstr(const char *haystack, const char *needle);
+long	ft_atol(const char *str);
 
 // ft_42
 char	*ft_substr(char	const *s, unsigned int start, size_t len);

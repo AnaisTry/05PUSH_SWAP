@@ -6,7 +6,7 @@
 #    By: angassin <angassin@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:16:32 by angassin          #+#    #+#              #
-#    Updated: 2023/03/28 19:07:46 by angassin         ###   ########.fr        #
+#    Updated: 2023/03/30 09:21:19 by angassin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,11 @@ RED='\033[1;91m'
 
 NAME		= push_swap
 
-CC			= cc
+CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror 
+CFLAGS		= -Wall -Wextra -Werror -g
 
-DEBUG		=  -g -fsanitize=address
+DEBUG		=  -g #-fsanitize=address
 
 
 #--------------------------------SOURCES----------------------------------------
