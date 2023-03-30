@@ -6,14 +6,15 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/30 11:00:56 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/30 11:31:29 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static	void	init(char **av, t_stack *stack);
-static	void	arg_is_valid(const char *arg);
+static void	init(char **av, t_stack *stack);
+static void	arg_is_valid(const char *arg);
+static void	check_duplicates(t_stack *stack);
 
 int	main(int argc, char	**argv)
 {
@@ -22,6 +23,7 @@ int	main(int argc, char	**argv)
 	if (argc < 2)
 		return (EXIT_FAILURE);
 	init(argv, &stack);
+	check_duplicates(&stack);
 	return (0);
 }
 
@@ -32,7 +34,6 @@ int	main(int argc, char	**argv)
 static void	init(char **av, t_stack *stack)
 {
 	size_t	i;
-	int		value;
 
 	i = 0;
 	stack->a = NULL;
@@ -42,8 +43,7 @@ static void	init(char **av, t_stack *stack)
 	while (av[++i])
 	{
 		arg_is_valid(av[i]);
-		value = ft_atoi(av[i]);
-		node_add_back(&stack->a, newnode(value));
+		node_add_back(&stack->a, newnode(ft_atoi(av[i])));
 	}
 }
 
@@ -72,4 +72,23 @@ static void	arg_is_valid(const char *arg)
 	nb = ft_atol(arg);
 	if (nb < INT_MIN || nb > INT_MAX)
 		error_exit();
+}
+
+static void	check_duplicates(t_stack *stack)
+{
+	t_node	*cursor;
+	t_node	*next_node;
+
+	cursor = stack->a;
+	while (cursor != NULL)
+	{
+		next_node = cursor->next;
+		while (next_node)
+		{
+			if (cursor->value == next_node->value)
+				error_exit();
+			next_node = next_node->next;
+		}
+		cursor = cursor->next;
+	}
 }
