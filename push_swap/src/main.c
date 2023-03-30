@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/30 12:47:18 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:35:52 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ int	main(int argc, char	**argv)
 		return (EXIT_FAILURE);
 	init(argv, &stack);
 	check_duplicates(&stack);
+	sort(&stack);
+	lstclear(&stack.a);
+	lstclear(&stack.b);
 	return (0);
 }
 

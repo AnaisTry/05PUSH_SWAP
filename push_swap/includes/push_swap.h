@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:11:37 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/30 12:42:53 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:47:35 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@
 
 /*									[Typedefs]								*/
 
+typedef enum e_bool
+{
+	false,
+	true
+}			t_bool;
+
 typedef struct s_stack
 {
 	t_node	*a;
@@ -37,16 +43,14 @@ typedef struct s_stack
 	size_t	size;
 }				t_stack;
 
-typedef enum e_bool
-{
-	false,
-	true
-}			t_bool;
-
 /*									  [Src]	    							*/
+
+// sort.c
+void	sort(t_stack *stack);
 
 /*									[Utils]	    							*/
 
+// utils.c
 void	error_exit(t_stack *stack);
 
 #endif
