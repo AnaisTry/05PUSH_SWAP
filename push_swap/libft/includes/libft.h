@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:33:18 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/30 10:13:18 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/30 12:25:15 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,5 @@ t_node	*lastnode(t_node *node);
 void	node_add_back(t_node **lst, t_node *new);
 void	nodes_iter(t_node *node, void (*f)(int));
 int		lstsize(t_node *node);
+void	lstclear(t_node **lst);
 #endif
