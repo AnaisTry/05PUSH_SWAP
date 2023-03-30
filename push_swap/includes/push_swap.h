@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:11:37 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/30 16:47:35 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:06:57 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /*									[Includes]								*/
 
-// read, write
+// read, write, STDERR_FILENO
 # include <unistd.h>
 // exit, malloc, free, size_t
 # include <stdlib.h>
