@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/31 23:45:53 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/31 23:51:21 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ int	main(int argc, char	**argv)
 	check_duplicates(&stack);
 	//assign_index(&stack);
 	sort(&stack);
-	lstclear(&stack.a);
-	lstclear(&stack.b);
+	if (stack.a)
+		lstclear(&stack.a);
+	if (stack.b)
+		lstclear(&stack.b);
 	return (0);
 }
 
@@ -50,6 +52,7 @@ static void	init(char **av, t_stack *stack)
 		arg_is_valid(av[i]);
 		node_add_back(&stack->a, newnode(ft_atoi(av[i])));
 	}
+	stack->size = lstsize(stack->a);
 }
 
 /* 

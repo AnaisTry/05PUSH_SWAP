@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: angassin <angassin@student.s19.be>         +#+  +:+       +#+         #
+#    By: angassin <angassin@student.19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:16:32 by angassin          #+#    #+#              #
-#    Updated: 2023/03/30 16:57:42 by angassin         ###   ########.fr        #
+#    Updated: 2023/03/31 14:44:38 by angassin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME		= push_swap
 
 CC			= gcc
 
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 
 DEBUG		=  -g -fsanitize=address
 
@@ -38,7 +38,7 @@ LIBFT_A 	= libft.a
 LIBFT_DIR 	= libft/	
 LIBFT		= $(addprefix libft/, $(LIBFT_A))
 
-PUSH_SWAP		= main.c sort.c
+PUSH_SWAP		= main.c sort.c operations.c
 PUSH_SWAP_SRC	= $(addprefix src/, $(PUSH_SWAP))
 
 UTILS		= utils.c 
@@ -48,8 +48,8 @@ OBJ			= $(SRC:.c=.o)
 
 #---------------------------------RULES-----------------------------------------
 
-#%o: %c 
-#	@$(CC) $(CFLAGS) -Iincludes -c $< -o  $(<:.c=.o)
+%o: %c 
+	@$(CC) $(CFLAGS) -Iincludes -c $< -o  $(<:.c=.o)
 			
 all: $(NAME)
 

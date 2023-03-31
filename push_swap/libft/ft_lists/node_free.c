@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   node_free.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 11:50:05 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/30 12:30:36 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/31 15:26:36 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 	using the function free(3).
     Finally, the pointer to the list must be set to NULL.
 */
-
 void	lstclear(t_node **lst)
 {
 	t_node	*temp;
