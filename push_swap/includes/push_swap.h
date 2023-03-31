@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:11:37 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/30 17:06:57 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:02:23 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 
 typedef enum e_bool
 {
-	false,
-	true
+	FALSE,
+	TRUE
 }			t_bool;
 
 typedef struct s_stack
@@ -47,6 +47,11 @@ typedef struct s_stack
 
 // sort.c
 void	sort(t_stack *stack);
+
+// operations.c
+void	swap(t_node **stack, char name);
+void	rotate(t_node **stack, char name);
+void	reverse_rotate(t_node **stack, char name);
 
 /*									[Utils]	    							*/
 
