@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/30 16:35:52 by angassin         ###   ########.fr       */
+/*   Updated: 2023/03/31 23:45:53 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	init(char **av, t_stack *stack);
 static void	arg_is_valid(const char *arg);
 static void	check_duplicates(t_stack *stack);
+// static void	assign_index(t_stack *stack);
 
 int	main(int argc, char	**argv)
 {
@@ -24,6 +25,7 @@ int	main(int argc, char	**argv)
 		return (EXIT_FAILURE);
 	init(argv, &stack);
 	check_duplicates(&stack);
+	//assign_index(&stack);
 	sort(&stack);
 	lstclear(&stack.a);
 	lstclear(&stack.b);
@@ -95,3 +97,26 @@ static void	check_duplicates(t_stack *stack)
 		cursor = cursor->next;
 	}
 }
+
+// static void	assign_index(t_stack *stack)
+// {
+// 	size_t	i;
+// 	int		j;
+// 	t_node	*temp;
+
+// 	i = 0;
+// 	temp = stack->a;
+// 	while (i < stack->size)
+// 	{
+// 		j = 0;
+// 		while (stack->a != NULL)
+// 		{
+// 			if (temp->value > stack->a->value)
+// 				j++;
+// 			stack->a = stack->a->next;
+// 		}
+// 		temp->index = j;
+// 		temp = temp->next;
+// 		i++;
+// 	}
+// }
