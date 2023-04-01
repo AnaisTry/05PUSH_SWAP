@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   node.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:22:16 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/28 14:03:23 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/01 13:08:21 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
 /*
-	Allocates (with malloc(3)) and returns a new node. 
-	The member variable ’content’ is initialized with the value of the 
-	parameter ’content’. The variable ’next’ is initialized to NULL.
+	Allocates (with malloc(3)) and returns a new node
+	containing the value given in argument. 
 */
 t_node	*newnode(int value)
 {
@@ -25,11 +24,12 @@ t_node	*newnode(int value)
 	if (!new_node)
 		return (NULL);
 	new_node->value = value;
+	new_node->index = 0;
 	new_node->next = NULL;
 	return (new_node);
 }
 
-// Returns the last node of the list
+// Returns the last node of the list.
 t_node	*lastnode(t_node *node)
 {
 	if (!node)

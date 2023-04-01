@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/31 23:51:21 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/01 13:05:18 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	init(char **av, t_stack *stack);
 static void	arg_is_valid(const char *arg);
 static void	check_duplicates(t_stack *stack);
-// static void	assign_index(t_stack *stack);
+static void	assign_index(t_stack *stack);
 
 int	main(int argc, char	**argv)
 {
@@ -25,7 +25,7 @@ int	main(int argc, char	**argv)
 		return (EXIT_FAILURE);
 	init(argv, &stack);
 	check_duplicates(&stack);
-	//assign_index(&stack);
+	assign_index(&stack);
 	sort(&stack);
 	if (stack.a)
 		lstclear(&stack.a);
@@ -101,25 +101,17 @@ static void	check_duplicates(t_stack *stack)
 	}
 }
 
-// static void	assign_index(t_stack *stack)
-// {
-// 	size_t	i;
-// 	int		j;
-// 	t_node	*temp;
+static void	assign_index(t_stack *stack)
+{
+	size_t	i;
+	t_node	*temp;
 
-// 	i = 0;
-// 	temp = stack->a;
-// 	while (i < stack->size)
-// 	{
-// 		j = 0;
-// 		while (stack->a != NULL)
-// 		{
-// 			if (temp->value > stack->a->value)
-// 				j++;
-// 			stack->a = stack->a->next;
-// 		}
-// 		temp->index = j;
-// 		temp = temp->next;
-// 		i++;
-// 	}
-// }
+	i = 0;
+	temp = stack->a;
+	while (i < stack->size)
+	{
+		temp->index = order_index(stack->a, temp->value);
+		temp = temp->next;
+		i++;
+	}
+}
