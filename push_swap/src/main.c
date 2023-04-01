@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:18:25 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/01 13:05:18 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/01 14:08:43 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ static void	assign_index(t_stack *stack)
 	temp = stack->a;
 	while (i < stack->size)
 	{
-		temp->index = order_index(stack->a, temp->value);
+		temp->index = index_order(stack->a, temp->value);
 		temp = temp->next;
 		i++;
 	}
