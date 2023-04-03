@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 16:36:42 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/31 18:09:10 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:49:12 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,25 @@ static void	sort_3(t_stack *stack)
 		reverse_rotate(&stack->a, 'a');
 	}
 }
+
+/* 
+	Find the place of the smallest number
+	Put it on top of the stack
+
+*/
+// static void	sort_5(t_stack *stack)
+// {
+// 	int	min;
+// 	int min_rank;
+
+// 	min = 0;
+// 	min_rank = ranking(stack->a, min);
+
+// 	if (min_rank <= 2)
+// 		while (stack->a->index != min)
+// 			rotate(stack->a, 'a');
+// 	else if (min_index >= 3)
+// 		while (stack)
+
+	
+// }
