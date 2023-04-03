@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node.c                                             :+:      :+:    :+:   */
+/*   node_create.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 10:22:16 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/01 13:08:21 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/03 13:03:58 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,15 @@ t_node	*lastnode(t_node *node)
 	return (node);
 }
 
+//	Adds the node ’new’ at the beginning of the list
+void	node_add_front(t_node **lst, t_node *new)
+{
+	if (!lst)
+		return ;
+	new->next = *lst;
+	*lst = new;
+}
+
 // Adds the node ’new’ at the end of the list.
 void	node_add_back(t_node **lst, t_node *new)
 {
@@ -53,18 +62,6 @@ void	node_add_back(t_node **lst, t_node *new)
 		last = lastnode(*lst);
 		last->next = new;
 	}
-}
-
-// Iterates the list and applies the function ’f’ on the content of each node.
-void	nodes_iter(t_node *node, void (*f)(int))
-{
-	if (!node || !f)
-		return ;
-	while (node)
-	{
-		f(node->value);
-		node = node->next;
-	}	
 }
 
 // Returns the length of the list aka the number of nodes in the list.

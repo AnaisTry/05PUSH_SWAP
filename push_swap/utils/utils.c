@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 19:01:24 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/01 14:09:49 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/03 11:03:55 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,19 @@ int	index_order(t_node *node, int value)
 		node = node->next;
 	}
 	return (index);
+}
+
+/* Find the smallest value of the list */
+int	is_min(t_node *node)
+{
+	int	min;
+
+	min = INT_MAX;
+	while (node != NULL)
+	{
+		if (node->value < min)
+			min = node->value;
+		node = node->next;
+	}
+	return (min);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:11:37 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/01 14:10:19 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/03 11:41:58 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	sort(t_stack *stack);
 void	swap(t_node **stack, char name);
 void	rotate(t_node **stack, char name);
 void	reverse_rotate(t_node **stack, char name);
+void	push(t_node **dest, t_node **src, char name);
 
 /*									[Utils]	    							*/
 

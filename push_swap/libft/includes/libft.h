@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 11:33:18 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/01 14:12:49 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/03 13:03:08 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,11 +87,16 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-// node.c
+
+// node_create.c
 t_node	*newnode(int value);
 t_node	*lastnode(t_node *node);
+void	node_add_front(t_node **lst, t_node *new);
 void	node_add_back(t_node **lst, t_node *new);
-void	nodes_iter(t_node *node, void (*f)(int));
 int		lstsize(t_node *node);
+
+
+// node_handle.c
+void	nodes_iter(t_node *node, void (*f)(int));
 void	lstclear(t_node **lst);
 #endif

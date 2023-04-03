@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 13:02:50 by angassin          #+#    #+#             */
-/*   Updated: 2023/03/31 18:09:18 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/03 11:59:52 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,12 @@ void	reverse_rotate(t_node **stack, char name)
 	*stack = last->next;
 	last->next = NULL;
 	ft_printf("rr%c\n", name);
+}
+
+void	push(t_node **dest, t_node **src, char name)
+{
+	t_node	*temp;
+	
+	temp = (*src)->next;
+	
 }

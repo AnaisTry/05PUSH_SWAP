@@ -6,7 +6,7 @@
 #    By: angassin <angassin@student.19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:16:32 by angassin          #+#    #+#              #
-#    Updated: 2023/03/31 14:44:38 by angassin         ###   ########.fr        #
+#    Updated: 2023/04/03 10:48:54 by angassin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,4 +85,4 @@ fclean: clean
 	
 re: fclean all
 
-.PHONY:	all debug exe clean fclean re bonus 
+.PHONY:	all debug exe clean fclean re 
