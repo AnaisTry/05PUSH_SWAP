@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 12:11:37 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/03 16:50:12 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/04 18:35:48 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,16 @@ typedef struct s_stack
 
 // sort.c
 void	sort(t_stack *stack);
+int		is_sorted(t_node *lst);
 
 // operations.c
 void	swap(t_node **stack, char stack_name);
 void	rotate(t_node **stack, char stack_name);
 void	reverse_rotate(t_node **stack, char stack_name);
 void	push(t_node **dest, t_node **src, char stack_name);
+
+// radix_sort.c
+void    radix_sort(t_stack *stack);
 
 /*									[Utils]	    							*/
 

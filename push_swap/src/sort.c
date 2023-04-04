@@ -6,17 +6,17 @@
 /*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 16:36:42 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/04 17:52:06 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/04 18:45:10 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	is_sorted(t_node *lst);
+int	is_sorted(t_node *lst);
 static void	sort_3(t_stack *stack);
 // static void	sort_4(t_stack *stack);
 static void	min_to_top(t_stack *stack);
-void	sort_small_stack(t_stack *stack);
+static void	small_stack_sort(t_stack *stack);
 
 void	sort(t_stack *stack)
 {
@@ -25,11 +25,13 @@ void	sort(t_stack *stack)
 	if (stack->size == 2)
 		swap(&stack->a, 'a');
 	else if (stack->size <= 10)
-		sort_small_stack(stack);
+		small_stack_sort(stack);
 		// sort_4(stack);
+	else 
+		radix_sort(stack);
 }
 
-static int	is_sorted(t_node *lst)
+int	is_sorted(t_node *lst)
 {
 	if (!lst)
 		return (-1);
@@ -90,25 +92,7 @@ static void	sort_3(t_stack *stack)
 // 	push(&stack->a, &stack->b, 'a');
 // }
 
- /* 
- 	Put the node containing the smallest value on top of the stack a
-*/
-static void	min_to_top(t_stack *stack)
-{
-	int	min;
-	int	min_rank;
-
-	min = find_min(stack->a);
-	min_rank = ranking(stack->a, min);
-	if (min_rank > (int)stack->size / 2)
-		while (stack->a->index != min)
-			reverse_rotate(&stack->a, 'a');
-	else
-		while (stack->a->index != min)
-			rotate(&stack->a, 'a');
-}
-
-void	sort_small_stack(t_stack *stack)
+static void	small_stack_sort(t_stack *stack)
 {
 	size_t	stack_size_total;
 
@@ -129,4 +113,22 @@ void	sort_small_stack(t_stack *stack)
 		push(&stack->a, &stack->b, 'a');
 		stack->size++;
 	}
+}
+
+ /* 
+ 	Put the node containing the smallest value on top of the stack a
+*/
+static void	min_to_top(t_stack *stack)
+{
+	int	min;
+	int	min_rank;
+
+	min = find_min(stack->a);
+	min_rank = ranking(stack->a, min);
+	if (min_rank > (int)stack->size / 2)
+		while (stack->a->index != min)
+			reverse_rotate(&stack->a, 'a');
+	else
+		while (stack->a->index != min)
+			rotate(&stack->a, 'a');
 }

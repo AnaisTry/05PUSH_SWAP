@@ -6,7 +6,7 @@
 #    By: angassin <angassin@student.19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:16:32 by angassin          #+#    #+#              #
-#    Updated: 2023/04/03 10:48:54 by angassin         ###   ########.fr        #
+#    Updated: 2023/04/04 18:13:55 by angassin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ LIBFT_A 	= libft.a
 LIBFT_DIR 	= libft/	
 LIBFT		= $(addprefix libft/, $(LIBFT_A))
 
-PUSH_SWAP		= main.c sort.c operations.c
+PUSH_SWAP		= main.c sort.c operations.c radix_sort.c
 PUSH_SWAP_SRC	= $(addprefix src/, $(PUSH_SWAP))
 
 UTILS		= utils.c 
