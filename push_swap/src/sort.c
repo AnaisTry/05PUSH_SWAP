@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 16:36:42 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/04 12:25:49 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:42:20 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 static int	is_sorted(t_node *lst);
 static void	sort_3(t_stack *stack);
-static void	sort_4(t_stack *stack);
-// void	sort_small_stack(t_stack *stack);
+// static void	sort_4(t_stack *stack);
+static void	min_to_top(t_stack *stack);
+void	sort_small_stack(t_stack *stack);
 
 void	sort(t_stack *stack)
 {
@@ -27,7 +28,7 @@ void	sort(t_stack *stack)
 		sort_3(stack);
 	else if (stack->size == 4)
 		sort_small_stack(stack);
-		//sort_4(stack);
+		// sort_4(stack);
 }
 
 static int	is_sorted(t_node *lst)
@@ -82,31 +83,18 @@ static void	sort_3(t_stack *stack)
 	}
 }
 
+// static void	sort_4(t_stack *stack)
+// {
+// 	min_to_top(stack);
+// 	push(&stack->b, &stack->a, 'b');
+// 	if (!is_sorted(stack->a))
+// 		sort_3(stack);
+// 	push(&stack->a, &stack->b, 'a');
+// }
+
 /* 
-	Find the place of the smallest number
-	Put it on top of the stack
-
+	Put the node containing the smallest value on top of the stack a
 */
-static void	sort_4(t_stack *stack)
-{
-	min_to_top(stack);
-	// int	min;
-	// int	min_rank;
-
-	// min = 0;
-	// min_rank = ranking(stack->a, min);
-	// if (min_rank <= 3)
-	// 	while (stack->a->index != min)
-	// 		rotate(&stack->a, 'a');
-	// else //if (min_rank <= 3)
-	// 	while (stack->a->index != min)
-	// 		reverse_rotate(&stack->a, 'a');
-	push(&stack->b, &stack->a, 'b');
-	if (!is_sorted(stack->a))
-		sort_3(stack);
-	push(&stack->a, &stack->b, 'a');
-}
-
 static void	min_to_top(t_stack *stack)
 {
 	int	min;
@@ -122,25 +110,25 @@ static void	min_to_top(t_stack *stack)
 			reverse_rotate(&stack->a, 'a');
 }
 
-// void	sort_small_stack(t_stack *stack)
-// {
-// 	size_t	i;
-// 	size_t	stack_size;
+void	sort_small_stack(t_stack *stack)
+{
+	size_t	stack_size_total;
 
-// 	stack_size = stack->size;
-// 	while (!is_sorted(stack->a))
-// 	{
-// 		if ( stack_size == 2)
-// 		{
-// 			swap(&stack->a, 'a');
-// 			break ;
-// 		}
-// 		min_to_top(stack);
-// 		push(&stack->b, &stack->a, 'b');
-// 	}
-// 	i = 0;
-// 	while (i < stack->size)
-// 	{
-// 		push(&stack->a, &stack->b, 'a');
-// 	}
-// }
+	stack_size_total = stack->size;
+	while (!is_sorted(stack->a))
+	{
+		if (stack->size == 2)
+		{
+			swap(&stack->a, 'a');
+			break ;
+		}
+		min_to_top(stack);
+		push(&stack->b, &stack->a, 'b');
+		stack->size--;
+	}
+	while (stack->size < stack_size_total)
+	{
+		push(&stack->a, &stack->b, 'a');
+		stack->size++;
+	}
+}
