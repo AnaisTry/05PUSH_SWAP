@@ -6,7 +6,7 @@
 /*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 18:11:59 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/05 14:43:34 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/05 15:14:46 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void    radix_sort(t_stack *stack)
             }
             i++;
         }
+        ft_printf("stack_size : %zu\n", stack->size);
         while (stack->size < stack_size_total)
         {
             push(&stack->a, &stack->b, 'a');
