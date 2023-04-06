@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 16:36:42 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/06 10:57:37 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/06 11:53:14 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	is_sorted(t_node *lst);
+int			is_sorted(t_node *lst);
 static void	sort_3(t_stack *stack);
-// static void	sort_4(t_stack *stack);
 static void	min_to_top(t_stack *stack);
 static void	small_stack_sort(t_stack *stack);
 
@@ -26,8 +25,7 @@ void	sort(t_stack *stack)
 		swap(&stack->a, 'a');
 	else if (stack->size <= 10)
 		small_stack_sort(stack);
-		// sort_4(stack);
-	else 
+	else
 		radix_sort(stack);
 }
 
@@ -77,20 +75,11 @@ static void	sort_3(t_stack *stack)
 			swap(&stack->a, 'a');
 	}
 	else
-	{	
+	{
 		swap(&stack->a, 'a');
 		reverse_rotate(&stack->a, 'a');
 	}
 }
-
-// static void	sort_4(t_stack *stack)
-// {
-// 	min_to_top(stack);
-// 	push(&stack->b, &stack->a, 'b');
-// 	if (!is_sorted(stack->a))
-// 		sort_3(stack);
-// 	push(&stack->a, &stack->b, 'a');
-// }
 
 static void	small_stack_sort(t_stack *stack)
 {
@@ -115,8 +104,8 @@ static void	small_stack_sort(t_stack *stack)
 	}
 }
 
- /* 
- 	Put the node containing the smallest value on top of the stack a
+/*
+ 	Put the stack a's node containing the smallest value on top of it
 */
 static void	min_to_top(t_stack *stack)
 {
