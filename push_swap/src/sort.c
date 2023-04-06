@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: angassin <angassin@student.19.be>          +#+  +:+       +#+        */
+/*   By: angassin <angassin@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 16:36:42 by angassin          #+#    #+#             */
-/*   Updated: 2023/04/05 14:51:31 by angassin         ###   ########.fr       */
+/*   Updated: 2023/04/06 10:57:37 by angassin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void	sort(t_stack *stack)
 		return ;
 	if (stack->size == 2)
 		swap(&stack->a, 'a');
-	// put back to 10
-	else if (stack->size <= 3)
+	else if (stack->size <= 10)
 		small_stack_sort(stack);
 		// sort_4(stack);
 	else 
