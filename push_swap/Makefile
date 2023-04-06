@@ -6,7 +6,7 @@
 #    By: angassin <angassin@student.19.be>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 17:16:32 by angassin          #+#    #+#              #
-#    Updated: 2023/04/04 18:13:55 by angassin         ###   ########.fr        #
+#    Updated: 2023/04/06 17:10:26 by angassin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CC			= gcc
 
 CFLAGS		= -Wall -Wextra -Werror -g
 
-DEBUG		=  -g -fsanitize=address
+DEBUG		= -g -fsanitize=address
 
 
 #--------------------------------SOURCES----------------------------------------
@@ -35,29 +35,29 @@ DEBUG		=  -g -fsanitize=address
 SRC		= $(PUSH_SWAP_SRC) $(UTILS_SRC)
 
 LIBFT_A 	= libft.a
-LIBFT_DIR 	= libft/	
+LIBFT_DIR 	= libft/
 LIBFT		= $(addprefix libft/, $(LIBFT_A))
 
 PUSH_SWAP		= main.c sort.c operations.c radix_sort.c
 PUSH_SWAP_SRC	= $(addprefix src/, $(PUSH_SWAP))
 
-UTILS		= utils.c 
-UTILS_SRC	= $(addprefix utils/, $(UTILS)) 
+UTILS		= utils.c
+UTILS_SRC	= $(addprefix utils/, $(UTILS))
 
 OBJ			= $(SRC:.c=.o)
 
 #---------------------------------RULES-----------------------------------------
 
-%o: %c 
+%o: %c
 	@$(CC) $(CFLAGS) -Iincludes -c $< -o  $(<:.c=.o)
-			
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo $(CURSIVE)$(GRAY) "     - Making libft..." $(NONE)
 	@make -C $(LIBFT_DIR)
 	@echo $(CURSIVE)$(GRAY) "     - Compiling $(NAME)..." $(NONE)
-	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)	
+	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 	@echo $(GREEN)"- Compiled -"$(NONE)
 
 exe: all
@@ -71,7 +71,7 @@ debug: $(OBJ)
 	@make -C $(LIBFT_DIR)
 	@echo $(CURSIVE)$(GRAY) "     - Compiling $(NAME)..." $(NONE)
 	@$(CC) $(CFLAGS) $(DEBUG) $(OBJ) $(LIBFT) -o $(NAME)
-	@echo $(GREEN)"- Compiled -"$(NONE) 
+	@echo $(GREEN)"- Compiled -"$(NONE)
 
 clean:
 	@echo $(CURSIVE)$(GRAY) "     - Removing object files..." $(NONE)
@@ -82,7 +82,7 @@ fclean: clean
 	@echo $(CURSIVE)$(GRAY) "     - Removing $(NAME)..." $(NONE)
 	@rm -rf $(NAME)
 	@make -C $(LIBFT_DIR) fclean
-	
+
 re: fclean all
 
-.PHONY:	all debug exe clean fclean re 
+.PHONY:	all	debug	exe	clean	fclean	re
