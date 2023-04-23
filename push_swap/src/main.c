@@ -35,7 +35,7 @@ int	main(int argc, char	**argv)
 }
 
 /* 
-	Initialize the stacks and the nodes, 
+	Initializes the stacks and the nodes, 
 	checking that they contain only valid integers
 */
 static void	init(char **av, t_stack *stack)
